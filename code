@@ -1,0 +1,34 @@
+from pyowm import OWM
+
+owm = OWM('de63709e3c333cb50acfa9a83068f289')
+
+
+pog = str(input("\nEnter your city: "))
+
+mgr = owm.weather_manager()
+observation = mgr.weather_at_place(pog)
+w = observation.weather
+
+
+print('Now is',w.detailed_status,"temperature:",w.temperature("celsius")['temp'])
+print('humidity',w.humidity)
+
+if w.temperature("celsius")['temp'] <= -0:
+    if w.humidity <= 13:
+        print("dress more loosely")
+    else:
+        print("dress warmly")
+    print("dress warmly")
+elif w.temperature("celsius")['temp'] >= 20:
+    if w.humidity <= 13:
+        print("dress more loosely")
+    else:
+        print("dress warmly")
+elif w.temperature("celsius")['temp'] >= 40:
+    if w.humidity <= 13:
+        print("dress more loosely")
+    else:
+        print("dress warmly")
+else:
+    print("dress as you want")
+input("")
